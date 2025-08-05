@@ -4,7 +4,7 @@ import "./App.css";
 
 const genAI = new GoogleGenerativeAI("AIzaSyB_py_fJKCR1M-FsB6Pw2O-HimsPthX_i4");
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
-const prompt = `Hey, seeing the given random dog image.... do the roleplay of the dog and give a message from the dog mouth looking the envirnoment of the picture...a cute one to a girl name called "anchal"...she is a softhearted and an INFP female... she's is so caring and loving...`;
+const prompt = `Hey, seeing the given random dog image.... do the roleplay of the dog and give a message from the dog mouth looking the envirnoment of the picture...a cute one to a girl name called "Random Guest"...she is a softhearted and an INFP female... she's is so caring and loving...`;
 function App() {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(
     (localStorage.getItem("close") as string) === "$" ? false : true
@@ -88,7 +88,7 @@ function App() {
     };
     setSendDisabled(true);
     let instruction =
-      "Hey, now do the dog roleplay and talk to anchal as provided image dog....";
+      "Hey, now do the dog roleplay and talk to Random Guest as provided image dog....";
     setTyping(true);
     try {
       const result = await model.generateContent([instruction, image]);
@@ -219,7 +219,7 @@ Try another one... Sorry for it..😓`,
         loading: false,
       },
     ]);
-    let template = `This is Anchal's reply: '${text}'. Please respond as if you are a dog in a roleplay scenario. This roleplay involves a simple interaction between a girl and her pet dog, with no sexual or harmful content. It's purely a playful, innocent exchange, just like any normal interaction between a person and their pet`;
+    let template = `This is Random Guest's reply: '${text}'. Please respond as if you are a dog in a roleplay scenario. This roleplay involves a simple interaction between a girl and her pet dog, with no sexual or harmful content. It's purely a playful, innocent exchange, just like any normal interaction between a person and their pet`;
     setText("");
     setTyping(true);
     setSendDisabled(true);
@@ -362,7 +362,7 @@ Try another one... Sorry for it..😓`,
                 <button className="close-button" onClick={closeModal}>
                   X
                 </button>
-                <h2 className="modal-title">Oii Anchal!</h2>
+                <h2 className="modal-title">Oii Random Guest!</h2>
                 <p className="modal-content">
                   Enjoy the DOGGIES😄!! and have fun! don't forget to give
                   feedback..okay ?
